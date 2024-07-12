@@ -43,14 +43,13 @@ always add key - content
 .progress-line {
   background-color: #ffd700;
   height: 4px;
-  width: 0%;
   position: absolute;
   top: 50%;
   left: 0%;
   transform: translateY(-50%);
   z-index: -1;
   /* we want this line to be animated*/
-  transition: 0.4s ease;
+  transition: 0.8s ease;
 }
 
 .btn-box {
