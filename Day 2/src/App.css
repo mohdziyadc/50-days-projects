@@ -1,6 +1,87 @@
 #root {
-  max-width: 1280px;
+  width: 480px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+}
+
+.progress {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+/*
+The first item in the div. Before everything else
+is denoted by ::before and ::after is vice versa
+always add key - content
+*/
+.progress::before {
+  content: "";
+  background-color: #808080;
+  height: 4px;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+.progress .circle {
+  background-color: #808080;
+  padding: 0.5rem 1rem;
+  border-radius: 9999999px;
+  border: #c2c1c1 solid 3px;
+}
+
+.progress .active {
+  background-color: #f2d00b;
+  color: black;
+  border: #f3eab4 solid 3px;
+}
+
+.progress-line {
+  background-color: #ffd700;
+  height: 4px;
+  width: 0%;
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translateY(-50%);
+  z-index: -1;
+  /* we want this line to be animated*/
+  transition: 0.4s ease;
+}
+
+.btn-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.btn {
+  border: 0;
+  padding: 0.7em 2em;
+  background-color: rgb(47, 118, 240);
+  margin: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  background-color: #808080;
+  cursor: not-allowed;
+}
+
+.btn:focus {
+  outline: 0;
+}
+
+.btn:active {
+  transform: scale(98%);
+}
+
+.btn:hover {
+  background-color: rgb(13, 93, 231);
 }
