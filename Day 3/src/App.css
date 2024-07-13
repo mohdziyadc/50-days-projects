@@ -1,42 +1,118 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  max-width: 100vw;
   text-align: center;
+  overflow-x: hidden;
+  background-color: #aea0a0;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.container {
+  /* by default transform orgin is in the middle of the page. This changes it to top left */
+  transform-origin: top left;
+  transition: transform 0.5s linear;
+  width: 100%;
+  background-color: #242424;
+  position: relative;
+  margin: 0;
+  border: 0;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.content {
+  max-width: 60%;
+  margin: 0 auto;
+  text-align: start;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.container.show-nav {
+  transform: rotate(-20deg);
 }
 
-.card {
-  padding: 2em;
+.nav-container {
+  position: absolute;
+  top: -130px;
+  left: -130px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #ff7979;
 }
 
-.read-the-docs {
-  color: #888;
+.nav-circle {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.nav-circle button:hover {
+  transform: scale(110%);
+  transition: transform 0.2s ease-in;
+  margin: 0;
+  cursor: pointer;
+}
+
+.nav-circle button {
+  border: 0;
+  position: absolute;
+  background: transparent;
+  color: black;
+  font-weight: bold;
+  padding: 0;
+}
+
+.inspire {
+  width: 300px;
+  height: 600px;
+}
+
+.nav-circle button:focus {
+  outline: 0;
+}
+.nav-circle button#menu {
+  top: 55%;
+  left: 70%;
+
+  /* border: 2px solid; */
+}
+
+.nav-circle button#cross {
+  top: 60%;
+  left: 85%;
+  transform: rotate(90deg);
+  transform-origin: top left;
+  transition: transform 0.2s ease;
+  /* border: 2px solid; */
+}
+
+.nav-menu {
+  position: absolute;
+  bottom: 0;
+  color: black;
+  text-transform: uppercase;
+  font: bold;
+  width: 200px;
+  transition: 0.5s ease;
+  z-index: 100;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.nav-menu.show {
+  opacity: 1;
+}
+
+nav ul {
+  list-style-type: none;
+}
+nav ul li {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 5px;
+}
+
+nav ul li + li {
+  margin-left: 20px;
+}
+
+nav ul li + li + li {
+  margin-left: 40px;
 }
