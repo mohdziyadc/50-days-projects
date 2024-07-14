@@ -1,0 +1,28 @@
+#root {
+  max-width: 1280px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.hero-text {
+  font-size: 3em;
+  opacity: 0.3;
+}
+
+.hero-text.highlighted {
+  color: #fff;
+}
+
+.padder {
+  height: 40vh;
+}
+
+.main-container {
+  position: relative;
+}
+
+.container {
+  background-color: black;
+  border-radius: 10px;
+  padding: 2em;
+}
